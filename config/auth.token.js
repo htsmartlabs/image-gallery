@@ -10,13 +10,12 @@ module.exports = (req,res,next)=>{
             if(decode){
                 next();
             }else{
-                return res.json({status:false,msg:" 1 Auth Failed"});    
+                return res.json({status:false,msg:"Authantication Failed"});    
             }    
         }else{
-            return res.json({status:false,msg:" 2 Auth Failed"});    
+            return res.json({status:false,msg:"Authantication Failed"});    
         }
     }catch(error){
-        console.log(error);
-        return res.json({status:false,msg:" 3 Auth Failed"});
+        return res.json({status:false,msg:"Authantication Failed"});
     }
 }

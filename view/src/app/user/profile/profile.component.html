@@ -1,0 +1,30 @@
+<section id="profile">
+  <div class="container p-5">
+    <h4 class="display-4">My Profile</h4>
+    <hr>
+    <div *ngIf="!data.user" class="m-auto">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <div *ngIf="data.user" class="row mt-5">
+      <div class="col-md-8 ml-3">
+        <p id="name" class="lead">{{ data.user.name }}</p>
+        <br>
+        <a routerLink="/register" class="btn btn-warning">Change Account Settings</a>
+        <br>
+        <br>
+        <p class="lead">File Actions</p>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <a routerLink="/add-product" class="btn btn-outline-success btn-block">Upload a image</a>
+          </div>
+          <div class="col-md-6">
+            <a routerLink="/user/{{ data.user._id }}" class="btn btn-outline-info btn-block">My Images</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

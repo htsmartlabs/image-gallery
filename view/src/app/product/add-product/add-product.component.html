@@ -1,0 +1,31 @@
+<section id="postProduct">
+  <div class="container p-5">
+    <h4 class="display-4">Add an Image</h4>
+    <hr>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label class="form-control-label">Name</label>
+            <input type="text" name="title" class="form-control" [(ngModel)]="data.requestProduct.name">
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select name="categoryId" [(ngModel)]="data.requestProduct.category" class="custom-select">
+              <option *ngFor="let category of data.categories" [value]="category._id">
+                {{ category.name }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" name="description" rows="5" [(ngModel)]="data.requestProduct.description"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Upload Image File</label>
+            <input type="file" class="form-control-file" accept="image/*" name="file" (change)="fileChange($event)">
+          </div>
+          <button type="button" class="btn btn-success" (click)="post()">Post</button>
+        </form>
+      </div>
+    </div>
+</section>
